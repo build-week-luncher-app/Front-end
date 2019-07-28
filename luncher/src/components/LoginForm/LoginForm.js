@@ -37,8 +37,8 @@ class LoginForm extends React.Component {
 		return (
 			<div>
 				<form onSubmit={this.login}>
-					<input type="text" name="username" value={this.state.credentials.username} onChange={this.handleChange}></input>
-					<input type="password" name="password" value={this.state.credentials.password} onChange={this.handleChange}></input>
+					<input type="text" name="username" placeholder="Email" value={this.state.credentials.username} onChange={this.handleChange}></input>
+					<input type="password" name="password" placeholder="Password" value={this.state.credentials.password} onChange={this.handleChange}></input>
 					<button>Log in </button>
 				</form>
 			</div>
