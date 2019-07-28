@@ -3,6 +3,7 @@ import logo from './logo.svg';
 
 import DonorHomePage from '../src/components/DonorHomePage/DonorHomePage';
 import './App.css';
+import LoginForm from './components/LoginForm/LoginForm';
 
 function App() {
   return (
