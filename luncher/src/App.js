@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 
 import NavMenu from './components/NavMenu/NavMenu'
 import DonorHomePage from '../src/components/DonorHomePage/DonorHomePage';

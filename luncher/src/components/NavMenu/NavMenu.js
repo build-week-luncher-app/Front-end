@@ -12,6 +12,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
+  import logo from '../../Images/logo.png';
 
 export default class NavMenu extends React.Component {
   constructor(props) {
@@ -31,7 +32,9 @@ export default class NavMenu extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">LUNCHER</NavbarBrand>
+          <NavbarBrand href="/">
+              <img className="main-logo" src={logo} />
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
