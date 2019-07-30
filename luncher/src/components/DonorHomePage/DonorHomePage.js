@@ -25,9 +25,9 @@ export default class DonorHomePage extends Component {
 
     render() {
         return (
-            <div>
+            <div className="donorhomepage">
                 <NavMenu />
-                <h1>Schools In Need</h1>
+                <h1 className="school-heading">Schools In Need Of Donations</h1>
                 <div className="col-container">
                     <Row>
                         {this.state.schools.map(school => (
@@ -48,7 +48,7 @@ function SchoolList({ school }) {
                 <CardHeader>{schoolName}</CardHeader>
                 <CardText>State: {state}</CardText>
                 <CardText>Zip: {zip}</CardText>
-                <CardText>Funds Needed: {fundsNeeded}</CardText>
+                <CardText>Funds Needed: ${fundsNeeded}</CardText>
                 <CardText>Email: {contact}</CardText>
                 <Button>Donate Here</Button>
             </CardBody>
