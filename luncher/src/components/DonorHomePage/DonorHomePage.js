@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import NavMenu from '../NavMenu/NavMenu'
-import { Card, CardBody, CardTitle, CardHeader, CardText, Button, Col, Row } from 'reactstrap'
+
+import { Button } from 'reactstrap'
 import './DonorHomePage.css'
 
 export default class DonorHomePage extends Component {
@@ -28,12 +29,10 @@ export default class DonorHomePage extends Component {
             <div className="donorhomepage">
                 <NavMenu />
                 <h1 className="school-heading">Schools In Need Of Donations</h1>
-                <div className="col-container">
-                    <Row>
+                <div className="school-list">
                         {this.state.schools.map(school => (
                         <SchoolList key={school.id} school={school} />
                         ))}           
-                    </Row>
                 </div>
             </div>
         )
@@ -43,15 +42,16 @@ export default class DonorHomePage extends Component {
 function SchoolList({ school }) {
     const { schoolName, state, zip, fundsNeeded, contact } = school;
     return (
-        <Card body>
-            <CardBody>
-                <CardHeader>{schoolName}</CardHeader>
-                <CardText>State: {state}</CardText>
-                <CardText>Zip: {zip}</CardText>
-                <CardText>Funds Needed: ${fundsNeeded}</CardText>
-                <CardText>Email: {contact}</CardText>
+        <div className="card-contain">
+            <div className="school-card"> 
+                <h3>{schoolName}</h3>
+                <hr />
+                <p>State: {state}</p>
+                <p>Zip: {zip}</p>
+                <p>Funds Needed: ${fundsNeeded}</p>
+                <p>Email: {contact}</p>
                 <Button>Donate Here</Button>
-            </CardBody>
-        </Card>
+            </div>
+        </div>
     )
 }
