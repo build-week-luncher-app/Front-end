@@ -46,3 +46,7 @@
     font-size: 18px;
     min-height: 40px;
 }
+
+.school-card hr {
+    width: 60%;
+}
