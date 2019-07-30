@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import NavMenu from '../NavMenu/NavMenu'
+import { Card, CardBody, CardTitle, CardHeader, CardText, Button, Col, Row } from 'reactstrap'
 import './DonorHomePage.css'
-
-import { Card, CardBody, CardTitle, CardText, Button } from 'reactstrap'
 
 export default class DonorHomePage extends Component {
     constructor() {
@@ -26,10 +26,15 @@ export default class DonorHomePage extends Component {
     render() {
         return (
             <div>
+                <NavMenu />
                 <h1>Schools In Need</h1>
-                {this.state.schools.map(school => (
-                    <SchoolList key={school.id} school={school} />
-                ))}
+                <div className="col-container">
+                    <Row>
+                        {this.state.schools.map(school => (
+                        <SchoolList key={school.id} school={school} />
+                        ))}           
+                    </Row>
+                </div>
             </div>
         )
     }
@@ -38,9 +43,9 @@ export default class DonorHomePage extends Component {
 function SchoolList({ school }) {
     const { schoolName, state, zip, fundsNeeded, contact } = school;
     return (
-        <Card className="card">
+        <Card body>
             <CardBody>
-                <CardTitle>School: {schoolName}</CardTitle>
+                <CardHeader>{schoolName}</CardHeader>
                 <CardText>State: {state}</CardText>
                 <CardText>Zip: {zip}</CardText>
                 <CardText>Funds Needed: {fundsNeeded}</CardText>
