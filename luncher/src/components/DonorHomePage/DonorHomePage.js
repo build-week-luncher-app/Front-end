@@ -50,7 +50,7 @@ function SchoolList({ school }) {
                 <p><strong>Zip: </strong>{zip}</p>
                 <p><strong>Funds Needed: </strong>${fundsNeeded}</p>
                 <p><strong>Email: </strong>{contact}</p>
-                {/* <Button>Donate Here</Button> */}
+                <Button>Donate</Button>
             </div>
         </div>
     )

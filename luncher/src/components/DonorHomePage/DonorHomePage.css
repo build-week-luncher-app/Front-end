@@ -57,3 +57,8 @@
 .school-card p {
     padding: 10px;
 }
+
+.school-card Button {
+    text-align: center;
+    width: 100%;
+}
