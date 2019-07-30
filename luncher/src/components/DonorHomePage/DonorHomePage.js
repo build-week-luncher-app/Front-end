@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import './DonorHomePage.css'
+
+import { Card, CardBody, CardTitle, CardText, Button } from 'reactstrap'
 
 export default class DonorHomePage extends Component {
     constructor() {
@@ -23,7 +26,7 @@ export default class DonorHomePage extends Component {
     render() {
         return (
             <div>
-                <h1>Schools</h1>
+                <h1>Schools In Need</h1>
                 {this.state.schools.map(school => (
                     <SchoolList key={school.id} school={school} />
                 ))}
@@ -35,14 +38,15 @@ export default class DonorHomePage extends Component {
 function SchoolList({ school }) {
     const { schoolName, state, zip, fundsNeeded, contact } = school;
     return (
-        <div className="card-container">
-            <div className="school-card">
-                <h2>School: {schoolName}</h2>
-                <h2>State: {state}</h2>
-                <h2>Zip: {zip}</h2>
-                <h2>Funds Needed: {fundsNeeded}</h2>
-                <h2>Email: {contact}</h2>
-            </div>
-        </div>
+        <Card className="card">
+            <CardBody>
+                <CardTitle>School: {schoolName}</CardTitle>
+                <CardText>State: {state}</CardText>
+                <CardText>Zip: {zip}</CardText>
+                <CardText>Funds Needed: {fundsNeeded}</CardText>
+                <CardText>Email: {contact}</CardText>
+                <Button>Donate Here</Button>
+            </CardBody>
+        </Card>
     )
 }
