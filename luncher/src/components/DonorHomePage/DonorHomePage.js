@@ -44,13 +44,13 @@ function SchoolList({ school }) {
     return (
         <div className="card-contain">
             <div className="school-card"> 
-                <h3>{schoolName}</h3>
+                <h3><strong>{schoolName}</strong></h3>
                 <hr />
-                <p>State: {state}</p>
-                <p>Zip: {zip}</p>
-                <p>Funds Needed: ${fundsNeeded}</p>
-                <p>Email: {contact}</p>
-                <Button>Donate Here</Button>
+                <p><strong>State: </strong>{state}</p>
+                <p><strong>Zip: </strong>{zip}</p>
+                <p><strong>Funds Needed: </strong>${fundsNeeded}</p>
+                <p><strong>Email: </strong>{contact}</p>
+                {/* <Button>Donate Here</Button> */}
             </div>
         </div>
     )
