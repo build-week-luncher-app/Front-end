@@ -1,7 +1,7 @@
 [build]
 base = "luncher/"
 publish = "luncher/build/"
-command = "yarn build"
+command = "npm build"
 [[redirects]]
 from = "/*"
 to = "/index.html"
