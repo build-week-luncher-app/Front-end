@@ -1,7 +1,18 @@
 footer {
-    background-color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #1356A4;
 }
 
-.footer-contain {
-    background-color: #fff;
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    font-size: 16px;
+    color: #fafafa;
+    margin: 0;
 }

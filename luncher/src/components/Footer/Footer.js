@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Button } from 'reactstrap'
 import './Footer.css'
 
 export default class Footer extends React.Component {
@@ -20,12 +21,14 @@ export default class Footer extends React.Component {
     return (
       <div className="footer-contain">
           <footer>
-              <a>
-                  <button>
-                      Admin Login
-                  </button>
-              </a>
-              <p>&copy; 2019 WEBPT6 LUNCHER</p>
+              <div className="footer-content">
+                <a>
+                    <Button>
+                        Admin Login
+                    </Button>
+                </a>
+                <p>&copy; 2019 LUNCHER</p>
+              </div>
           </footer>
       </div>
     );
