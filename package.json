@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/build-week-luncher-app/Front-end/issues"
   },
-  "homepage": "https://github.com/build-week-luncher-app/Front-end#readme",
-  "dependencies": {
-    "react-scripts": "^3.0.1"
-  }
+  "homepage": "https://github.com/build-week-luncher-app/Front-end#readme"
 }
