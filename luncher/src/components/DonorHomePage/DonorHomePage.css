@@ -1,0 +1,64 @@
+.donorhomepage {
+    background-color: #fafafa;
+}
+
+.main-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.school-heading {
+    color: #373737;
+    padding: 60px 10px 30px 10px;
+}
+
+.school-list {
+    padding: 50px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.school-card {
+    text-align: left;
+    width: 250px;
+    min-height: 250px;
+    margin: 20px 5px;
+    padding: 0;
+    /* position: relative; */
+    background-color: #fff;
+    border: 1px solid #efefef;
+    border-bottom: none;
+    border-radius: 5px;
+    box-shadow: 0 7px 6px -6px #777;
+}
+
+.school-card h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    min-height: 70px;
+}
+
+.school-card hr {
+    width: 60%;
+}
+
+.school-card p {
+    padding: 10px;
+}
+
+.school-card Button {
+    text-align: center;
+    width: 100%;
+}

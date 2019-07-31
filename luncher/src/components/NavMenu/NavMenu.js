@@ -11,8 +11,9 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
-  import logo from '../../Images/logo.png';
+  DropdownItem } from 'reactstrap'
+  import './NavMenu.css'
+  import logo from '../../Images/logo.png'
 
 export default class NavMenu extends React.Component {
   constructor(props) {
@@ -30,8 +31,8 @@ export default class NavMenu extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color="light" light expand="md">
+      <div className="navmenu">
+        <Navbar light expand="md">
           <NavbarBrand href="/">
               <img className="main-logo" src={logo} />
           </NavbarBrand>
