@@ -1,6 +1,6 @@
 [build]
-base = "luncher/"
-publish = "luncher/"
+base = "luncher/front-end"
+publish = "luncher/front-end"
 command = "npm run-script build"
 [[redirects]]
 from = "/*"
