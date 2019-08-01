@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -13,6 +13,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
   import logo from '../../Images/logo.png';
+import LoginForm from '../LoginForm/LoginForm';
 
 export default class NavMenu extends React.Component {
   constructor(props) {
@@ -44,9 +45,13 @@ export default class NavMenu extends React.Component {
               <NavItem>
                 <NavLink href="/">Schools</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/login">Admin Login</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
+        <Route path="/login" component={LoginForm} />
       </div>
     );
   }

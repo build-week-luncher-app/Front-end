@@ -15,6 +15,10 @@ export default class SchoolHomePage extends Component {
         this.setState({formDisplayed: !this.state.formDisplayed})
     }
 
+    handleChange = e => {
+        this.setState({[e.target.name]: e.target.value})
+    }
+
     addSchool = e => {
         e.preventDefault()
         const { schoolName, state, zip, fundsNeeded } = this.state
@@ -55,11 +59,11 @@ export default class SchoolHomePage extends Component {
                     <SchoolList key={school.id} school={school} />
                 ))}
                 <div>
-                    <form onSubmit={}>
-                        <input type="text" name="schoolName" placeholder="School Name" value={} onChange={} />
-                        <input type="text" name="state" placeholder="State" value={} onChange={} />
-                        <input type="text" name="zip" placeholder="Zip Code" value={} onChange={} />
-                        <input type="number" size="6" name="fundsNeeded" placeholder="Funds Needed" value={} onChange={} />
+                    <form onSubmit={this.addSchool}>
+                        <input type="text" name="schoolName" placeholder="School Name" value={this.state.schoolName} onChange={this.handleChange} />
+                        <input type="text" name="state" placeholder="State" value={this.state.state} onChange={this.handleChange} />
+                        <input type="text" name="zip" placeholder="Zip Code" value={this.state.zip} onChange={this.handleChange} />
+                        <input type="number" size="6" name="fundsNeeded" placeholder="Funds Needed" value={this.state.fundsNeeded} onChange={this.handleChange} />
                     </form>
                 </div>
             </div>

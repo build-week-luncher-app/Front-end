@@ -5,6 +5,7 @@ import LoginForm from '../src/components/LoginForm/LoginForm';
 import DonorHomePage from '../src/components/DonorHomePage/DonorHomePage';
 import './App.css';
 import Register from './components/Register/Register';
+import SchoolHomePage from './components/SchoolHomePage/SchoolHomePage';
 
 function App() {
   return (
@@ -12,10 +13,6 @@ function App() {
       <div className="App">
         <NavMenu />
         <DonorHomePage />
-        <LoginForm />
-        <Register />
-
-
       </div>
     </Router>
   );

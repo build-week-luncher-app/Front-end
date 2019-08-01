@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+import { connect } from 'react-redux'
+
 class Register extends Component {
     constructor() {
 			super()
@@ -45,28 +47,28 @@ class Register extends Component {
 							type="text" 
 							name="firstName"  
 							placeholder="First name"
-							value={this.state.firstName}
+							value={this.props.firstName}
 							onChange={this.handleChange}
 						/>
 						<input 
 							type="text" 
 							name="lastName"  
 							placeholder="Last name"
-							value={this.state.lastName}
+							value={this.props.lastName}
 							onChange={this.handleChange}
 						/>
 						<input 
 							type="text" 
 							name="email"  
 							placeholder="Email"
-							value={this.state.email}
+							value={this.props.email}
 							onChange={this.handleChange}
 						/>
 						<input 
 							type="password" 
 							name="password"  
 							placeholder="Password"
-							value={this.state.password}
+							value={this.props.password}
 							onChange={this.handleChange}
 						/>
 						<input 
@@ -90,4 +92,5 @@ class Register extends Component {
 		}
 }
 
-export default Register
+
+export default connect(null)(Register)
