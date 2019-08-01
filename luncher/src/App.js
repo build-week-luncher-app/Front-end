@@ -9,14 +9,12 @@ import SchoolHomePage from './components/SchoolHomePage/SchoolHomePage';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <NavMenu />
-        <DonorHomePage />
-      </div>
-    </Router>
+    <div className="App">
+      <Route 
+        exact path ="/" component={DonorHomePage}
+      />
+    </div>
   );
 }
 
-export default App;
-
+export default App
