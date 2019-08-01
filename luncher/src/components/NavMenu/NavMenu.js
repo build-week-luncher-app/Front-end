@@ -40,7 +40,7 @@ export default class NavMenu extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <NavLink href="https://luncher-marketing.netlify.com/">Home</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/">Schools</NavLink>
