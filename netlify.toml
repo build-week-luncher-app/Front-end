@@ -8,7 +8,7 @@
 [build]
   base    = "./luncher"
   publish = "./luncher/build"
-  command = "npm run-script build" 
+  command = "npm run build" 
 
 [[redirects]]
   from = "/*"
