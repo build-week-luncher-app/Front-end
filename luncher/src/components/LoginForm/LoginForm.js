@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 
 import { login } from '../../actions';
+import NavMenu from '../NavMenu/NavMenu';
 
 
 class Login extends React.Component {
@@ -32,6 +33,7 @@ class Login extends React.Component {
 	render() {
 		return (
 			<div>
+				<NavMenu />
 				<form onSubmit={this.login}>
 					<input type="text" name="username" placeholder="Name" value={this.state.credentials.username} onChange={this.handleChange} />
 					<input type="text" name="password" placeholder="Password" value={this.state.credentials.password} onChange={this.handleChange} />
