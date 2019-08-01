@@ -13,7 +13,6 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
   import logo from '../../Images/logo.png';
-  import LoginForm from '../LoginForm/LoginForm';
   import './NavMenu.css'
 
 export default class NavMenu extends React.Component {
@@ -46,13 +45,9 @@ export default class NavMenu extends React.Component {
               <NavItem>
                 <NavLink href="/">Schools</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="/login">Admin Login</NavLink>
-              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
-        <Route path="/login" component={LoginForm} />
       </div>
     );
   }
