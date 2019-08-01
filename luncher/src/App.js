@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import DonorHomePage from '../src/components/DonorHomePage/DonorHomePage';
 import './App.css';
 import LoginForm from './components/LoginForm/LoginForm';
+import SchoolHomePage from './components/SchoolHomePage/SchoolHomePage';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 
 
 function App() {
@@ -13,6 +15,9 @@ function App() {
       />
       <Route 
         exact path ="/login" component={LoginForm}
+      />
+      <PrivateRoute 
+        exact path ="/admin" component={SchoolHomePage}
       />
     </div>
   );
