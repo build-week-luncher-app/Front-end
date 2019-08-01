@@ -29,12 +29,12 @@ export default class SingleSchoolPage extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="singleschoolpage">
                 <NavMenu />
                 <div className="admin-nav">
-                    <Button>Add School</Button>
+                    <Button className="ssp-btn">Add School</Button>
                     <h1>School Administration</h1>
-                    <Button>Logout</Button>
+                    <Button className="ssp-btn">Logout</Button>
                 </div>
                 <div className="admin-school-list">
                     {this.state.schools.map(school => (
