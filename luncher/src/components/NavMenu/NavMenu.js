@@ -33,7 +33,7 @@ export default class NavMenu extends React.Component {
     return (
       <div className="navmenu">
         <Navbar light expand="md">
-          <NavbarBrand href="/">
+          <NavbarBrand href="https://luncher-marketing.netlify.com/">
               <img className="main-logo" src={logo} />
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
