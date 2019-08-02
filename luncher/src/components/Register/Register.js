@@ -1,96 +1,97 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 
 import { connect } from 'react-redux'
+import { addNewUser } from '../../actions'
+
 
 class Register extends Component {
-    constructor() {
-			super()
-			this.state = {
-				firstName: '',
-				lastName: '',
-				email: '',
-				password: '',
-				role: ''
+			state = {
+				credentials: {
+					firstName: '',
+					lastName: '',
+					email: '',
+					password: '',
+					role: ''
+				}
 			}
-		}
-		
-		addUser = e => {
-			e.preventDefault()
-			const { firstName, lastName, email, password, role } = this.state
-			const payload = { firstName, lastName, email, password, role }
-			axios.post("https://luncher-backend.herokuapp.com/api/register", payload)
-				.then((res) => {
-					this.props.history.push('/')
-				})
-				.catch((err) => {
-					console.log(err)
-				})
-			this.setState({
-				firstName: '',
-				lastName: '',
-				email: '',
-				password: '',
-				role: ''
+
+		handleChange = e => {
+			this.setState({ 
+				credentials: {
+					...this.state.credentials,
+					[e.target.name]: e.target.value
+				}
 			})
 		}
 
-		handleChange = e => {
-			this.setState({ [e.target.value]: e.target.value})
+		registerUser = e => {
+			e.preventDefault()
+			this.props.addNewUser(this.state.credentials)
 		}
 
 		render() {
 			return (
 				<div>
-					<form onSubmit={this.addUser}>
+					<form onSubmit={this.registerUser}>
 						<input 
 							type="text" 
 							name="firstName"  
 							placeholder="First name"
-							value={this.props.firstName}
+							value={this.state.credentials.firstName}
 							onChange={this.handleChange}
 						/>
 						<input 
 							type="text" 
 							name="lastName"  
 							placeholder="Last name"
-							value={this.props.lastName}
+							value={this.state.credentials.lastName}
 							onChange={this.handleChange}
 						/>
 						<input 
 							type="text" 
 							name="email"  
 							placeholder="Email"
-							value={this.props.email}
+							value={this.state.credentials.email}
 							onChange={this.handleChange}
 						/>
 						<input 
 							type="password" 
 							name="password"  
 							placeholder="Password"
-							value={this.props.password}
+							value={this.state.credentials.password}
 							onChange={this.handleChange}
 						/>
 						<input 
 							type="radio" 
 							name="role"  
-							value={this.state.role.admin}
+							value={this.state.credentials.role}
 							onChange={this.handleChange}
 						/>
-						<label for="admin">Admin</label>
+						<label htmlFor="admin">Admin</label>
 						<input
 							type="radio"
 							name="role"
-							value={this.state.role.donor}
+							value={this.state.credentials.role}
 							onChange={this.handleChange} 
 						/>
-						<label for="donor">Donor</label>
+						<label htmlFor="donor">Donor</label>
 						<button type="submit">Register</button>
 					</form>
 				</div>
 			)
-		}
+		}	
+}	
+
+const mapStateToProps = state => {
+  return {
+    error: state.error,
+    loggingIn: state.loggingIn,
+    registerUser: state.registerUser
+  }
 }
 
 
-export default connect(null)(Register)
+export default connect(
+    mapStateToProps,
+    { addNewUser }
+  )(Register);

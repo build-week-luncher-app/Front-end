@@ -4,19 +4,23 @@ import {
 	LOGIN_FAILURE,
 	GET_ACCOUNT_START,
 	GET_ACCOUNT_SUCCESS,
-	GET_ACCOUNT_FAILURE
+	GET_ACCOUNT_FAILURE,
+	REGISTER_DATA_START,
+	REGISTER_DATA_SUCCESS,
+	REGISTER_DATA_FAILURE
   } from '../actions';
   
   const initialState = {
     error: null,
-    loggingIn: false,
-	schools: [],
+	loggingIn: false,
+	registerUser: false,
+	data: [],
 	firstName: '',
 	lastName: '',
 	email: '',
 	role: '',
 	message: '',
-	token: ''
+	token: localStorage.getItem('token')
   };
 
   const reducer = (state = initialState, action) => {
@@ -71,6 +75,27 @@ import {
 					...state,
 					loggingIn: false,
 					error: action.data.message
+				}
+			}
+			case REGISTER_DATA_START: {
+				return {
+					...state,
+					registerUser: true
+				}
+			}
+			case REGISTER_DATA_SUCCESS: {
+				return {
+					...state,
+					data: [...action.payload],
+					registerUser: false,
+					error: null
+				}
+			}
+			case REGISTER_DATA_FAILURE: {
+				return {
+					...state,
+					registerUser: false,
+					error: action.payload
 				}
 			}
 

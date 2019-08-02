@@ -5,6 +5,7 @@ import './App.css';
 import LoginForm from './components/LoginForm/LoginForm';
 import SchoolHomePage from './components/SchoolHomePage/SchoolHomePage';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
+import Register from './components/Register/Register';
 
 
 class App extends React.Component {
@@ -21,7 +22,12 @@ class App extends React.Component {
           <PrivateRoute 
             exact path ="/admin" component={SchoolHomePage}
           />
+          <Route exact path="/register"
+            render={ () => <Register 
+            addNewUser={this.addNewUser} /> }
+          />
         </div>
+        
       </BrowserRouter> 
     );
   }

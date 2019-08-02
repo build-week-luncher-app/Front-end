@@ -47,10 +47,11 @@ class Login extends React.Component {
 				<NavMenu />
 				<form onSubmit={this.login}>
 					{this.props.error && <p className="error">{this.props.error}</p>}
-					<input type="text" name="username" placeholder="Name" value={this.state.credentials.username} onChange={this.handleChange} />
+					<input type="text" name="username" placeholder="Username" value={this.state.credentials.username} onChange={this.handleChange} />
 					<input type="password" name="password" placeholder="Password" value={this.state.credentials.password} onChange={this.handleChange} />
 						<button>Login</button>
 				</form>
+				<Link to="/register">Register Here</Link>
 			</div>
 		)
 	}

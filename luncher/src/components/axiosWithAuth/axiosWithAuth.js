@@ -1,12 +1,14 @@
+
 import axios from 'axios';
 
-export const axiosWithAuth = () => {
+export default function() {
   const token = localStorage.getItem('token');
 
-  return axios.create({
+  const instance = axios.create({
     headers: {
-      Authorization: token
+      'Content-Type': 'application/json',
+      Authorization: token,
     },
-    baseURL: "https://luncher-backend.herokuapp.com"
   });
-};
+  return instance;
+}
