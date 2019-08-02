@@ -2,6 +2,10 @@
     background-color: #fafafa;
 }
 
+.admin-school-list {
+    padding-bottom: 100px;
+}
+
 .admin-nav {
     display: flex;
     justify-content: space-between;
