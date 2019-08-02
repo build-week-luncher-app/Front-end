@@ -19,6 +19,7 @@ export default class AddSchoolForm extends Component {
     render() {
         return (
             <div className="add-school">
+            <NavMenu />
             <form>
                 <input className="school-name" type="text" name="schoolName" value="" placeholder="School Name" required={true}></input>
                 <input className="amount-need" type="number" name="needAmount" value="" placeholder="School Need Amount" required={true}></input>
