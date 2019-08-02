@@ -32,7 +32,7 @@ export default class SingleSchoolPage extends Component {
             <div className="singleschoolpage">
                 <NavMenu />
                 <div className="admin-nav">
-                    <Button className="ssp-btn">Add School</Button>
+                    <Button className="ssp-btn" href="/add-school-form">Add School</Button>
                     <h1>School Administration</h1>
                     <Button className="ssp-btn" href="/">Logout</Button>
                 </div>
