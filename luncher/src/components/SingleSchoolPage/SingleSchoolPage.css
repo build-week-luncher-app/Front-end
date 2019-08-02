@@ -12,3 +12,35 @@
 .admin-nav Button {
     background-color: #1356A4;
 }
+
+.admin-card-contain {
+    border: 1px solid #efefef;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2),
+        0 6px 20px 0 rgba(0,0,0,.19);
+    border-radius: 5px;
+    width: 100%;
+    max-width: 900px;
+    margin: 15px auto;
+    padding: 5px 20px;
+    cursor: pointer;
+    color: #373737;
+    text-decoration: none;
+}
+
+.admin-school-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-school-card h4 {
+    min-width: 30%;
+    max-width: 30%;
+    /* display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; */
+    /* font-weight: bold; */
+}
