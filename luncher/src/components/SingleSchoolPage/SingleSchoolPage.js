@@ -34,7 +34,7 @@ export default class SingleSchoolPage extends Component {
                 <div className="admin-nav">
                     <Button className="ssp-btn">Add School</Button>
                     <h1>School Administration</h1>
-                    <Button className="ssp-btn">Logout</Button>
+                    <Button className="ssp-btn" href="/">Logout</Button>
                 </div>
                 <div className="admin-school-list">
                     {this.state.schools.map(school => (
@@ -53,7 +53,7 @@ function AdminSchoolList({ school }) {
         <div>
             <div className="admin-card-contain">
                 <div className="admin-school-card">
-                    <h4><strong>{schoolName}</strong></h4>
+                    <h4>{schoolName}</h4>
                     <p>${fundsNeeded}</p>
                     <p>{contact}</p>
                 </div>
