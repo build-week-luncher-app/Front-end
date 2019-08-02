@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom';
 
-export default class SchoolHomePage extends Component {
+import { getAccount } from '../../actions'
+import DonorHomePage from '../DonorHomePage/DonorHomePage';
+
+class App extends Component {
     constructor() {
         super()
         this.state = {
@@ -9,6 +14,11 @@ export default class SchoolHomePage extends Component {
             formDisplayed: false
         }
     }
+
+    componentDidMount() {
+        this.props.getAccount()
+    }
+
 
     showForm = e => {
         e.preventDefault()
@@ -39,25 +49,14 @@ export default class SchoolHomePage extends Component {
         })
     }
 
-    componentDidMount() {
-        axios
-            .get('https://luncher-backend.herokuapp.com/api/schools')
-            .then(response => {
-                this.setState(() => ({ schools: response.data }))
-            })
-            .catch(error => {
-                console.error('Error', error)
-            })
-    }
+
 
     render() {
         return (
             <div>
+                <DonorHomePage />
                 <h1>Schools In Need</h1>
                 <button onClick={this.showForm}>Add a School Profile</button>
-                {this.state.schools.map(school => (
-                    <SchoolList key={school.id} school={school} />
-                ))}
                 <div>
                     <form onSubmit={this.addSchool}>
                         <input type="text" name="schoolName" placeholder="School Name" value={this.state.schoolName} onChange={this.handleChange} />
@@ -71,18 +70,15 @@ export default class SchoolHomePage extends Component {
     }
 }
 
-function SchoolList({ school }) {
-    const { schoolName, state, zip, fundsNeeded, contact } = school;
-    return (
-        <div className="card-container">
-            <div className="school-card">
-                <h2>School: {schoolName}</h2>
-                <h2>State: {state}</h2>
-                <h2>Zip: {zip}</h2>
-                <h2>Funds Needed: {fundsNeeded}</h2>
-                <h2>Email: {contact}</h2>
-            </div>
-        </div>
-    )
+
+
+const mapDispatchToProps = {
+	getAccount,
 }
 
+export default withRouter(
+    connect(
+      null,
+      mapDispatchToProps
+    )(App)
+  );
